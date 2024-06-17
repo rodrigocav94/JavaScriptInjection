@@ -22,7 +22,7 @@ class ActionViewController: UIViewController {
                 
                 
                 //  Ask the item provider to actually provide us with its item. This method is async, so it will carry on executing while the item provider is busy loading and sending us its data.:
-                itemProvider.loadItem(forTypeIdentifier: kUTTypePropertyList as String) { [weak self] (dict, error) in // The dictionary that was given to us by the item provider, and any error that occurred.
+                itemProvider.loadItem(forTypeIdentifier: UTType.propertyList.identifier as String) { [weak self] (dict, error) in // The dictionary that was given to us by the item provider, and any error that occurred.
                     
                 }
             }
