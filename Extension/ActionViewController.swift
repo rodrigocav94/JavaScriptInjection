@@ -10,8 +10,9 @@ import MobileCoreServices
 import UniformTypeIdentifiers
 
 class ActionViewController: UIViewController {
-
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var script: UITextView!
+    var pageTitle = ""
+    var pageURL = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +26,28 @@ class ActionViewController: UIViewController {
                 itemProvider.loadItem(forTypeIdentifier: UTType.propertyList.identifier as String) { [weak self] (dict, error) in // The dictionary that was given to us by the item provider, and any error that occurred.
                     guard let itemDictionary = dict as? NSDictionary else { return }
                     guard let javaScriptValues = itemDictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary else { return } // NSExtensionJavaScriptPreprocessingResultsKey is a special key that holds the data we sent from JavaScript.
-                    print(javaScriptValues)
+                    self?.pageTitle = javaScriptValues["title"] as? String ?? ""
+                    self?.pageURL = javaScriptValues["URL"] as? String ?? ""
+                    
+                    DispatchQueue.main.async {
+                        self?.title = self?.pageTitle
+                    }
                 }
             }
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
     }
 
     @IBAction func done() {
-        // Return any edited content to the host app.
-        // This template doesn't do anything, so we just echo the passed in items.
-        self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
+        let argument: NSDictionary = ["customJavaScript": script.text as Any]
+        let webDictionary: NSDictionary = [NSExtensionJavaScriptFinalizeArgumentKey: argument]
+        let customJavaScript = NSItemProvider(item: webDictionary, typeIdentifier: UTType.propertyList.identifier as String)
+        
+        let item = NSExtensionItem()
+        item.attachments = [customJavaScript]
+        
+        extensionContext?.completeRequest(returningItems: [item])
     }
 
 }
