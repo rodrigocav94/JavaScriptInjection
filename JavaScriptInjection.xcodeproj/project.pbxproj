@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2205532C26674F00D3C270 /* NewScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2205522C26674F00D3C270 /* NewScriptViewController.swift */; };
+		9F2205582C266AD100D3C270 /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2205562C266AD100D3C270 /* NameCell.swift */; };
+		9F2205592C266AD100D3C270 /* NameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2205572C266AD100D3C270 /* NameCell.xib */; };
+		9F22055E2C267CD400D3C270 /* ScriptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22055C2C267CD400D3C270 /* ScriptCell.swift */; };
+		9F22055F2C267CD400D3C270 /* ScriptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F22055D2C267CD400D3C270 /* ScriptCell.xib */; };
+		9F727B4F2C2662660058E093 /* ActionViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F727B4E2C2662660058E093 /* ActionViewControllerDataSource.swift */; };
+		9F727B512C2662F20058E093 /* SavedScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F727B502C2662F20058E093 /* SavedScript.swift */; };
 		9FE840C52C20D8B30069DA9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE840C42C20D8B30069DA9B /* AppDelegate.swift */; };
 		9FE840C72C20D8B30069DA9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE840C62C20D8B30069DA9B /* SceneDelegate.swift */; };
 		9FE840C92C20D8B30069DA9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE840C82C20D8B30069DA9B /* ViewController.swift */; };
@@ -46,6 +53,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F2205522C26674F00D3C270 /* NewScriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewScriptViewController.swift; sourceTree = "<group>"; };
+		9F2205562C266AD100D3C270 /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
+		9F2205572C266AD100D3C270 /* NameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameCell.xib; sourceTree = "<group>"; };
+		9F22055C2C267CD400D3C270 /* ScriptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptCell.swift; sourceTree = "<group>"; };
+		9F22055D2C267CD400D3C270 /* ScriptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScriptCell.xib; sourceTree = "<group>"; };
+		9F727B4E2C2662660058E093 /* ActionViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewControllerDataSource.swift; sourceTree = "<group>"; };
+		9F727B502C2662F20058E093 /* SavedScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScript.swift; sourceTree = "<group>"; };
 		9FE840C12C20D8B30069DA9B /* JavaScriptInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaScriptInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE840C42C20D8B30069DA9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FE840C62C20D8B30069DA9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,8 +141,15 @@
 			isa = PBXGroup;
 			children = (
 				9FE841192C20E5160069DA9B /* Media.xcassets */,
+				9F727B502C2662F20058E093 /* SavedScript.swift */,
+				9F727B4E2C2662660058E093 /* ActionViewControllerDataSource.swift */,
 				9FE8411B2C20E5160069DA9B /* ActionViewController.swift */,
 				9FE8411D2C20E5160069DA9B /* MainInterface.storyboard */,
+				9F2205522C26674F00D3C270 /* NewScriptViewController.swift */,
+				9F2205562C266AD100D3C270 /* NameCell.swift */,
+				9F2205572C266AD100D3C270 /* NameCell.xib */,
+				9F22055C2C267CD400D3C270 /* ScriptCell.swift */,
+				9F22055D2C267CD400D3C270 /* ScriptCell.xib */,
 				9FE841202C20E5160069DA9B /* Info.plist */,
 				9FE841282C20F3EE0069DA9B /* Action.js */,
 			);
@@ -228,6 +249,8 @@
 			files = (
 				9FE841292C20F3EE0069DA9B /* Action.js in Resources */,
 				9FE8411A2C20E5160069DA9B /* Media.xcassets in Resources */,
+				9F22055F2C267CD400D3C270 /* ScriptCell.xib in Resources */,
+				9F2205592C266AD100D3C270 /* NameCell.xib in Resources */,
 				9FE8411F2C20E5160069DA9B /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F22055E2C267CD400D3C270 /* ScriptCell.swift in Sources */,
+				9F2205582C266AD100D3C270 /* NameCell.swift in Sources */,
+				9F727B512C2662F20058E093 /* SavedScript.swift in Sources */,
+				9F727B4F2C2662660058E093 /* ActionViewControllerDataSource.swift in Sources */,
 				9FE8411C2C20E5160069DA9B /* ActionViewController.swift in Sources */,
+				9F2205532C26674F00D3C270 /* NewScriptViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
